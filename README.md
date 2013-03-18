@@ -9,7 +9,7 @@ This tool is developed in sync with [symfony's repository](https://github.com/sy
 
 ## To Execute:
 1. Place the `.xlf` and `.csv` files in the `data/` directory;
-2. Check and update the `bin/config.php` file to adjust script behavior;
+2. Check and update the `bin/config.php` file to adjust script behaviour;
 3. Run `csv2xlf.php` script (run without script arguments will prompt help);
 4. Receive result xlf files in the `target/` directory.
 
