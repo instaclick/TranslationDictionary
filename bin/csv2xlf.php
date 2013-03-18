@@ -29,7 +29,7 @@ if ($argc != 3 || $argv[1] == "h" || $argv[1] == "help" ) {
 	echo "   2. This script is for automating the bulk of the manual translation process, you are still responsible for manually ensuring a quality translation.\n";
 	echo "\n";
 
-	exit(1);
+	return;
 }
 
 $sourcePath         = $PATH_DATA . $argv[1];
@@ -38,13 +38,13 @@ $translationCsvPath = $PATH_DATA . $argv[2];
 if ( ! is_file($sourcePath)) {
     echo "File " . $sourcePath . " was not found.\n";
 
-	exit(1);
+	return;
 }
 
 if ( ! is_file($translationCsvPath)) {
     echo "File " . $translationCsvPath . " was not found.\n";
 
-	exit(1);
+	return;
 }
 
 echo "Parsing " . $argv[1] . " ...\n";
@@ -56,10 +56,6 @@ echo "Parsing completed.\n\n";
 echo "Parsing " . $argv[2] . " ...\n";
 $csvArray = csv2array($translationCsvPath);
 echo "Parsing completed.\n\n";
-
-//echo var_export($csvArray, true);
-//echo var_export($xmlObject, true);
-//exit(1);
 
 // Remove all files in the "/target" directory
 array_map('unlink', glob($PATH_TARGET . '*'));
