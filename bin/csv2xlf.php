@@ -22,14 +22,14 @@ include_once("include/constants.php");
 include_once("include/functions.php");
 
 if ($argc != 3 || $argv[1] == "h" || $argv[1] == "help" ) {
-	echo "Usage:   php csv2xlf.php <source.xx.xlf> <translation.csv>\n";
+    echo "Usage:   php csv2xlf.php <source.xx.xlf> <translation.csv>\n";
     echo "Example: php csv2xlf.php messages.en.xlf language_template.csv\n";
-	echo "Note:\n";
-	echo "   1. Please update the config.php for configurations before running.\n";
-	echo "   2. This script is for automating the bulk of the manual translation process, you are still responsible for manually ensuring a quality translation.\n";
-	echo "\n";
+    echo "Note:\n";
+    echo "   1. Please update the config.php for configurations before running.\n";
+    echo "   2. This script is for automating the bulk of the manual translation process, you are still responsible for manually ensuring a quality translation.\n";
+    echo "\n";
 
-	return;
+    return;
 }
 
 $sourcePath         = $PATH_DATA . $argv[1];
@@ -38,13 +38,13 @@ $translationCsvPath = $PATH_DATA . $argv[2];
 if ( ! is_file($sourcePath)) {
     echo "File " . $sourcePath . " was not found.\n";
 
-	return;
+    return;
 }
 
 if ( ! is_file($translationCsvPath)) {
     echo "File " . $translationCsvPath . " was not found.\n";
 
-	return;
+    return;
 }
 
 echo "Parsing " . $argv[1] . " ...\n";
