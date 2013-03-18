@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="7b033b5878c1475f661d541ee5e2130e" resname="ic_csv2xlf.key.1">
+        <source>ic_csv2xlf.key.1</source>
+        <target>English one</target>
+      </trans-unit>
+      <trans-unit id="11bf596601ce4253c101ae9b299e6ce9" resname="ic_csv2xlf.key.2">
+        <source>ic_csv2xlf.key.2</source>
+        <target>English two</target>
+      </trans-unit>
+      <trans-unit id="542bbb0fbc7bc5af63cabe8cea4b0497" resname="ic_csv2xlf.key.3">
+        <source>ic_csv2xlf.key.3</source>
+        <target>English three</target>
+      </trans-unit>
+      <trans-unit id="58874a9c9411d8baf2b27c5e27af092f" resname="ic_csv2xlf.key.4">
+        <source>ic_csv2xlf.key.4</source>
+        <target>English four</target>
+      </trans-unit>
+      <trans-unit id="70329d11383e0a0168472c43f32d1f68" resname="ic_csv2xlf.key.5">
+        <source>ic_csv2xlf.key.5</source>
+        <target>English five</target>
+      </trans-unit>
+      <trans-unit id="4b4183ef02021a8426a533005c4f3573" resname="ic_csv2xlf.key.6">
+        <source>ic_csv2xlf.key.6</source>
+        <target>English six</target>
+      </trans-unit>
+      <trans-unit id="ace9ba226f56919e71b889a10508597c" resname="ic_csv2xlf.key.7">
+        <source>ic_csv2xlf.key.7</source>
+        <target>English seven</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

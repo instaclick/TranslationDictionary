@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="1">
+        <source>ic_csv2xlf.key.1</source>
+        <target>Français un</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>ic_csv2xlf.key.2</source>
+        <target>Français deux</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>ic_csv2xlf.key.3</source>
+        <target>Français trois</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>ic_csv2xlf.key.4</source>
+        <target>Français quatre</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>ic_csv2xlf.key.5</source>
+        <target>Français cinq</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>ic_csv2xlf.key.6</source>
+        <target>Français six</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>ic_csv2xlf.key.7</source>
+        <target>Français sept</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
