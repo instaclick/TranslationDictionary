@@ -1,6 +1,14 @@
 <?php
 /**
+ * Functions
+ *
+ * PHP version 5 (>= 5.3.0)
+ *
+ * @category  PHP
+ * @author    Yuan Xie <shayx@nationalfibre.net>
  * @copyright 2013 Instaclick Inc.
+ * @license   http://spdx.org/licenses/MIT MIT License
+ * @link      https://github.com/instaclick/Csv2Xlf
  */
 
 /**

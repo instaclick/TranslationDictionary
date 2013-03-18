@@ -1,16 +1,18 @@
 <?php
 /**
- * @copyright 2013 Instaclick Inc.
- */
-
-/**
  * Csv2Xlf Standalone Command-line Tool
  *
  * This simple script will:
  *     1) Take a symfony2 .xlf file (preferrably the fallback language) and a .csv dictionary, and;
  *     2) Per configuration, populate the additional languages into corresponding .xlf files.
  *
- * @author Yuan Xie <shayx@nationalfibre.net>
+ * PHP version 5 (>= 5.3.0)
+ *
+ * @category  PHP
+ * @author    Yuan Xie <shayx@nationalfibre.net>
+ * @copyright 2013 Instaclick Inc.
+ * @license   http://spdx.org/licenses/MIT MIT License
+ * @link      https://github.com/instaclick/Csv2Xlf
  */
 
 error_reporting(E_ALL);
@@ -20,7 +22,7 @@ include_once("include/constants.php");
 include_once("include/functions.php");
 
 if ($argc != 3 || $argv[1] == "h" || $argv[1] == "help" ) {
-	echo "Usage:   csv2xlf.php <source.xx.xlf> <translation.csv>\n";
+	echo "Usage:   php csv2xlf.php <source.xx.xlf> <translation.csv>\n";
     echo "Example: php csv2xlf.php messages.en.xlf language_template.csv\n";
 	echo "Note:\n";
 	echo "   1. Please update the config.php for configurations before running.\n";

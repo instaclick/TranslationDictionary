@@ -1,6 +1,12 @@
 <?php
 /**
+ * Config
+ *
+ * @category  PHP
+ * @author    Yuan Xie <shayx@nationalfibre.net>
  * @copyright 2013 Instaclick Inc.
+ * @license   http://spdx.org/licenses/MIT MIT License
+ * @link      https://github.com/instaclick/Csv2Xlf
  */
 
 // The csv's line end symbol
