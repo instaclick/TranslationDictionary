@@ -8,7 +8,7 @@
  * @author    Yuan Xie <shayx@nationalfibre.net>
  * @copyright 2013 Instaclick Inc.
  * @license   http://spdx.org/licenses/MIT MIT License
- * @link      https://github.com/instaclick/Csv2Xlf
+ * @link      https://github.com/instaclick/TranslationDictionary
  */
 
 /**
@@ -170,18 +170,111 @@ function massageRow($rowArray)
 }
 
 /**
- * Get target file path.
+ * Get target file name.
  *
- * @param $orginalFilePath    The original file's path
- * @param $targetLanguageCode The target language code
+ * @param $languageCode Language code
  *
  * @return string
  */
-function getTargetFilePath($orginalFilePath, $targetLanguageCode)
+function getTargetFileName($languageCode)
 {
-    $sourceArray                         = explode('.', $orginalFilePath);
-    $sourceLanguageCodeKey               = count($sourceArray) - 2;
-    $sourceArray[$sourceLanguageCodeKey] = $targetLanguageCode;
+    return 'messages.' . $languageCode . '.xlf';
+}
 
-    return implode('.', $sourceArray);
+/**
+ * Parse a list of xlf files into an array presentation of dictionary.
+ *
+ * @param array $xlfPathList  An array of .xlf files that contain translation definitions
+ * @param array $languageList An array of target translation languages
+ *
+ * @return array
+ */
+function xlf2dictionary($xlfPathList, $languageList)
+{
+    $translationKeyList = array_merge(
+        array('key' => CSV_KEY_COLUMN_NAME),
+        $languageList
+    );
+
+    $dictionary = array(
+        'key' => $translationKeyList,
+    );
+
+    foreach ($xlfPathList as $xlfPath) {
+        $xlfDocument = new DOMDocument();
+        $xlfDocument->load($xlfPath);
+
+        $sourceLanguage  = $xlfDocument->getElementsByTagName('file')->item(0)->attributes->getNamedItem('source-language')->nodeValue;
+        $transUnitList   = $xlfDocument->getElementsByTagName('trans-unit');
+        $dictionary      = mergeTransUnitList($dictionary, $languageList, $sourceLanguage, $transUnitList);
+    }
+
+    return $dictionary;
+}
+
+/**
+ * Merge trans unit list into the dictionary.
+ *
+ * @param array  $dictionary     An array of .xlf file path that contain translation definitions
+ * @param array  $languageList   An array of target translation languages
+ * @param string $sourceLanguage Source language
+ * @param array  $transUnitList  An list of trans-units
+ *
+ * @return array
+ */
+function mergeTransUnitList($dictionary, $languageList, $sourceLanguage, $transUnitList)
+{
+    $emptyTargetTranslations = array();
+
+    foreach ($languageList as $languageId => $languageContent) {
+        $emptyTargetTranslations[$languageId] = '';
+    }
+
+    foreach ($transUnitList as $transUnit) {
+        $translation = $transUnit->childNodes;
+        $source      = $translation->item(1)->nodeValue;
+        $target      = $translation->item(3)->nodeValue;
+
+        // Prompt empty source
+        if ($source == '') {
+            echo " * An entry with an empty key were found. Entry ignored.\n";
+
+            continue;
+        }
+
+        // Prompt empty target
+        if ($target == '') {
+            echo " * " . $source . " -- an entry with an empty translation were found. Entry ignored.\n";
+
+            continue;
+        }
+
+        // Create translation entry (if it doesn't exist already)
+        if ( ! isset($dictionary[$source][$source])) {
+            $translationEntryList = array_merge(
+                array($source => $source),
+                $emptyTargetTranslations
+            );
+
+            $dictionary[$source] = $translationEntryList;
+        }
+
+        // Fill the language translation (if it doesn't exist already)
+        if ($dictionary[$source][$sourceLanguage] == '') {
+            $dictionary[$source][$sourceLanguage] = $target;
+
+            continue;
+        }
+
+        // Warn duplicated definitions
+        echo " * " . $source . " -- duplicated keys entries were found.";
+
+        if ($dictionary[$source][$sourceLanguage] != $target) {
+            echo "\n   > Warning: conflicting translations were found: \"" . $dictionary[$source][$sourceLanguage] . "\" vs \"" . $target . "\". \"" . $dictionary[$source][$sourceLanguage] . "\" was used.";
+        }
+
+        echo "\n";
+    }
+
+    return $dictionary;
 }

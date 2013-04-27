@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="file.ext">
+    <body>
+    <trans-unit id="ce78c504e98b6130de21841fa8f345f4" resname="ic_xlf2csv.key.1">
+      <source>ic_xlf2csv.key.1</source>
+      <target>English one</target>
+    </trans-unit>
+    <trans-unit id="ced1230ada6cf38a636e7f308a614f9d" resname="ic_xlf2csv.key.2">
+      <source>ic_xlf2csv.key.2</source>
+      <target>English two</target>
+    </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="de" datatype="plaintext" original="file.ext">
+    <body>
+    <trans-unit id="d0c8879d1d246115528f259122bd5027" resname="ic_csv2xlf.key.1">
+      <source>ic_csv2xlf.key.1</source>
+      <target>Deutsch eins</target>
+    </trans-unit>
+    <trans-unit id="e3466c3aec994814178aad974349fbd2" resname="ic_csv2xlf.key.2">
+      <source>ic_csv2xlf.key.2</source>
+      <target>Deutsch zwei</target>
+    </trans-unit>
+    <trans-unit id="d430ec616c1fd4133d23b8da8313c4f5" resname="ic_csv2xlf.key.3">
+      <source>ic_csv2xlf.key.3</source>
+      <target>Deutsch drei</target>
+    </trans-unit>
+    <trans-unit id="418c592cb9ad372ac06bd9e7654c3141" resname="ic_csv2xlf.key.5">
+      <source>ic_csv2xlf.key.5</source>
+      <target>&lt;b&gt;Deutsch fünf&lt;/b&gt;</target>
+    </trans-unit>
+    <trans-unit id="52048947adda12e2a2d92529c28b00f6" resname="ic_csv2xlf.key.7">
+      <source>ic_csv2xlf.key.7</source>
+      <target>Deutsch sieben</target>
+    </trans-unit>
+    </body>
+  </file>
+</xliff>

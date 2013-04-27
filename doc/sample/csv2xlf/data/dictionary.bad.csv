@@ -11,3 +11,6 @@
 "ic_csv2xlf.key.2";"English two";"Français deux";
 "ic_csv2xlf.key.4";"English four";"Français quatre";
 "ic_csv2xlf.key.7";"foobar";"foobar";"foobar"
+"ic_xlf2csv.key.1";"English one";"Français un";
+;;;
+"ic_xlf2csv.key.2";"English two";"Français deux";

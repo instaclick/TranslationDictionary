@@ -6,14 +6,14 @@
  * @author    Yuan Xie <shayx@nationalfibre.net>
  * @copyright 2013 Instaclick Inc.
  * @license   http://spdx.org/licenses/MIT MIT License
- * @link      https://github.com/instaclick/Csv2Xlf
+ * @link      https://github.com/instaclick/TranslationDictionary
  */
 
 // Paths
-$PATH_ROOT   = '../';
-$PATH_BIN    = $PATH_ROOT . "bin/";
-$PATH_DATA   = $PATH_ROOT . "data/";
-$PATH_TARGET = $PATH_ROOT . "target/";
+$PATH_ROOT   = '..' . DIRECTORY_SEPARATOR;
+$PATH_BIN    = $PATH_ROOT . 'bin' . DIRECTORY_SEPARATOR;
+$PATH_DATA   = $PATH_ROOT . 'data' . DIRECTORY_SEPARATOR;
+$PATH_TARGET = $PATH_ROOT . 'target' . DIRECTORY_SEPARATOR;
 
-// Templates
-$XML_HEAD    = '<?xml version="1.0" encoding="utf-8"?>';
+// Definitions
+$KEY_DELIMITER = '.';
